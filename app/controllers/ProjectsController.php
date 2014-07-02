@@ -10,7 +10,8 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$projects = Project::all();
+		$this->layout->content = View::make('projects.index', compact('projects'));
 	}
 
 	/**
@@ -21,7 +22,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$this->layout->content = View::make('projects.create');
 	}
 
 	/**
@@ -32,7 +33,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		
 	}
 
 	/**
@@ -42,9 +43,9 @@ class ProjectsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Project $project)
 	{
-		//
+		$this->layout->content = View::make('projects.show', compact('project'));
 	}
 
 	/**
@@ -54,9 +55,9 @@ class ProjectsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Project $project)
 	{
-		//
+		$this->layout->content = View::make('projects.edit', compact('project'));
 	}
 
 	/**
@@ -66,7 +67,7 @@ class ProjectsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Project $project)
 	{
 		//
 	}
@@ -78,7 +79,7 @@ class ProjectsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Project $project)
 	{
 		//
 	}
